@@ -1,0 +1,65 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="/bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="/bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="/bower_components/paper-item/paper-item.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/paper-badge/paper-badge.html">
+
+<dom-module id="htwg-menubar">
+    <template>
+        <style>
+            :host {
+                width: 100%;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            paper-button {
+                border-radius: unset;
+            }
+            paper-button:hover {
+                border-bottom: 2px solid white;
+            }
+            paper-badge {
+                top: 2px !important;
+            }
+            #logo {
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+            }
+            a {
+                text-decoration: none;
+                color: #3F9ABF;
+            }
+            .menu-link {
+                color: white;
+            }
+        </style>
+            <img id="logo" src="/images/htwg_logo.png" />
+            <paper-menu-button id="btn">
+                <paper-button class="dropdown-trigger">
+                    <span>Bachelor</span>
+                </paper-button>
+                <paper-menu class="dropdown-content" style="color:#3F9ABF;">
+                    <paper-item><a href="/bachelor">Alle</a></paper-item>
+                    <paper-item>AIN</paper-item>
+                    <paper-item>WIN</paper-item>
+                    <paper-item>GIB</paper-item>
+                    <paper-item>MKD</paper-item>
+                    <paper-item><a href="/bewerbung">Bewerbung</a></paper-item>
+                </paper-menu>
+            </paper-menu-button>
+            <paper-badge for="btn" label="4"></paper-badge>
+            <paper-button>Master</paper-button>
+            <paper-button>Hochschule</paper-button>
+            <a href="/anfahrt" class="menu-link"><paper-button>Anfahrt</paper-button></a>
+    </template>
+    <script>
+        Polymer({
+            is: 'htwg-menubar'
+        });
+    </script>
+</dom-module>

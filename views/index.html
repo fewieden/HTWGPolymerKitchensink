@@ -8,16 +8,8 @@
             <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
             <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
             <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+            <link rel="import" href="/polymer/htwg-menubar.html">
             <link rel="import" href="bower_components/paper-material/paper-material.html">
-            <link rel="import" href="bower_components/paper-button/paper-button.html">
-            <link rel="import" href="bower_components/paper-input/paper-input.html">
-            <link rel="import" href="bower_components/paper-dialog/paper-dialog.html">
-            <link rel="import" href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-            <link rel="import" href="bower_components/paper-listbox/paper-listbox.html">
-            <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html">
-            <link rel="import" href="bower_components/paper-item/paper-item.html">
-            <link rel="import" href="bower_components/paper-badge/paper-badge.html">
-            <link rel="import" href="bower_components/google-map/google-map.html">
             <style is="custom-style">
                 paper-scroll-header-panel {
                     position: absolute;
@@ -39,21 +31,9 @@
                     };
                 }
                 paper-toolbar {
-                    /* custom toolbar height */
                     height: 200px;
                     background-color: transparent;
                     overflow: visible;
-                }
-                paper-toolbar paper-button {
-                    border-radius: unset;
-                }
-                paper-toolbar paper-button:hover {
-                    border-bottom: 2px solid white;
-                }
-                #logo {
-                    width: 40px;
-                    height: 40px;
-                    margin-right: 20px;
                 }
                 #breadcrumb h3 {
                     display: inline-block;
@@ -76,33 +56,11 @@
                     text-decoration: none;
                     color: #3F9ABF;
                 }
-                .menu-link {
-                    color: white;
-                }
             </style>
         </head>
 <body unresolved>
 <paper-scroll-header-panel condenses keep-condensed-header header-height="200" condensed-header-height="70">
-    <paper-toolbar>
-        <img id="logo" src="/images/htwg_logo.png" />
-        <paper-menu-button id="btn">
-            <paper-button class="dropdown-trigger">
-                <span>Bachelor</span>
-            </paper-button>
-            <paper-menu class="dropdown-content" style="color:#3F9ABF;">
-                <paper-item><a href="/bachelor">Alle</a></paper-item>
-                <paper-item>AIN</paper-item>
-                <paper-item>WIN</paper-item>
-                <paper-item>GIB</paper-item>
-                <paper-item>MKD</paper-item>
-                <paper-item><a href="/bewerbung">Bewerbung</a></paper-item>
-            </paper-menu>
-        </paper-menu-button>
-        <paper-badge for="btn" label="4"></paper-badge>
-        <paper-button>Master</paper-button>
-        <paper-button>Hochschule</paper-button>
-        <a href="/anfahrt" class="menu-link"><paper-button>Anfahrt</paper-button></a>
-    </paper-toolbar>
+    <paper-toolbar><htwg-menubar></htwg-menubar></paper-toolbar>
     <div id="content">
         <paper-material elevation="1">
             <h1>HTWG Konstanz, Deine Fachhochschule am Bodensee</h1>

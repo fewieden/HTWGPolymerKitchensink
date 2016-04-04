@@ -1,0 +1,23 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/polymer/htwg-ripple.html">
+
+<dom-module id="htwg-button">
+    <template>
+        <style>
+            #btn {
+                cursor: pointer;
+                font-size: 20px;
+                position: relative;
+            }
+        </style>
+        <button id="btn">
+            <content></content>
+            <htwg-ripple></htwg-ripple>
+        </button>
+    </template>
+    <script>
+        Polymer({
+            is: 'htwg-button'
+        });
+    </script>
+</dom-module>

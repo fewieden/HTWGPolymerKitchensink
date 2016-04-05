@@ -1,0 +1,72 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="/bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="/bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="/bower_components/paper-item/paper-item.html">
+<link rel="import" href="/bower_components/paper-button/paper-button.html">
+<link rel="import" href="/bower_components/paper-badge/paper-badge.html">
+
+<dom-module id="htwg-wooble">
+    <template>
+        <style>
+
+            p {
+                display: inline-block;
+            }
+     
+            #main .icon {
+                border-radius: 30%;
+                display: inline-block;
+            }
+ 
+     
+            #main .icon:nth-child(1) {
+                animation-name: keyframes1;
+                animation-iteration-count: infinite;
+            }
+             
+            #main .icon:nth-child(2) {
+                animation-name: keyframes2;
+                animation-iteration-count: infinite;
+            }
+             
+            @keyframes keyframes1 {
+                0% {
+                    transform: rotate(-5deg);
+                    animation-timing-function: ease-in;
+                }
+                50% {
+                    transform: rotate(5deg);
+                    animation-timing-function: ease-out;
+                }
+            }
+             
+            @keyframes keyframes2 {
+                0% {
+                    transform: rotate(5deg);
+                    animation-timing-function: ease-in;
+                }
+                50% {
+                    transform: rotate(-5deg);
+                    animation-timing-function: ease-out;
+                }
+            }
+        </style>
+    	
+        <div id="main">
+            <img class="icon"style="animation-delay: -0.5s; animation-duration: .3s" height=20% src={{url}} width=20%>
+             <p>{{text}}</p>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'htwg-wooble',
+
+            properties: {
+                url: String,
+                text: String
+            }
+        });
+    </script>
+</dom-module>

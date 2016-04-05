@@ -9,53 +9,48 @@
 <dom-module id="htwg-wooble">
     <template>
         <style>
-
-            p {
-                display: inline-block;
-            }
      
             #main .icon {
                 border-radius: 30%;
+                width: 24px;
+                height: 24px;
+                vertical-align: middle;
                 display: inline-block;
             }
- 
-     
-            #main .icon:nth-child(1) {
-                animation-name: keyframes1;
+
+            #main:hover .icon {
+                animation-name: wobbling;
                 animation-iteration-count: infinite;
+                animation-duration: 0.3s;
+            }
+
+            #main span {
+                vertical-align:middle;
             }
              
-            #main .icon:nth-child(2) {
-                animation-name: keyframes2;
-                animation-iteration-count: infinite;
-            }
-             
-            @keyframes keyframes1 {
+            @keyframes wobbling {
                 0% {
-                    transform: rotate(-5deg);
+                    transform: rotate(0deg);
                     animation-timing-function: ease-in;
                 }
-                50% {
+                25% {
                     transform: rotate(5deg);
                     animation-timing-function: ease-out;
                 }
-            }
-             
-            @keyframes keyframes2 {
-                0% {
-                    transform: rotate(5deg);
+                75% {
+                    transform: rotate(-5deg);
                     animation-timing-function: ease-in;
                 }
-                50% {
-                    transform: rotate(-5deg);
-                    animation-timing-function: ease-out;
+                100% {
+                    transform: rotate(0deg);
+                    animation-timing-function: ease-in;
                 }
             }
         </style>
     	
         <div id="main">
-            <img class="icon"style="animation-delay: -0.5s; animation-duration: .3s" height=20% src={{url}} width=20%>
-             <p>{{text}}</p>
+            <img class="icon" src={{url}}>
+            <span>{{text}}</span>
         </div>
     </template>
 
